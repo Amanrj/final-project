@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flight Booking</title>
+    <link rel="stylesheet" type="text/css" href="./home.css" />
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+        <!-- Include jQuery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
+    
+</head>
+
+<body>
+    <div id="nav">
+        <ul>
+            <div id="LOGO">
+                <li><a href=""> LOGO</a></li>
+            </div>
+            <div id="anchers">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="About.html">Your Cart</a></li>
+                <li><a href="Contact.html">Favourites</a></li>
+                <li><a href="Contact.html">Your Order</a></li>
+            </div>
+            <div id="loginsignup">
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="Register.html">Register</a></li>
+            </div>
+        </ul>
+    </div>
+    <div id="MainBooking">
+        <div id="coat">
+            <p style="text-transform: uppercase; font-size: 40px">
+                Life Is Short And The World Is Wide!
+            </p>
+            <h4>
+                To get the best of your adventure you just need to leave and go where
+                you like. we are waiting for you.
+            </h4>
+        </div>
+        <div id="search-flight">
+            <h2 style="text-align: center;">Search Flight</h2>
+            <form>
+                <label for="departure">Departure:</label>
+                <input type="text" id="departure" name="departure" list="destinationList" placeholder="Enter departure location">
+                <label for="departure">Departure:</label>
+
+                <!-- ////////////// -->
+
+                <input type="text" id="destination" name="destination"  list="destinationList" placeholder="Enter destination location">
+                <label for="destination">Departure:</label>
+                <input type="submit" value="Search">
+            </form>
+            <div id="shownsearch">
+                <div class="sercher">
+
+                </div>
+                <div class="sercher">
+
+                </div>
+                <div class="sercher">
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
+<script>
+    // Define auto-suggestion data
+    var availableLocations = ["City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z"];
+
+    // Apply auto-suggestion to the departure and destination inputs
+    $("#departure, #departure").autocomplete({
+        source: availableLocations.slice(0, 10)
+    });
+    $("#destination, #destination").autocomplete({
+        source: availableLocations.slice(0, 10)
+    })
+</script>

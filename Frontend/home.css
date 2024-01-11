@@ -1,0 +1,128 @@
+html {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+   background-image: url("./Images/homepage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#nav {
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 5px;
+
+    position: sticky;
+    /* Added */
+    top: 0;
+    /* Added */
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100%-20px);
+    /* Added */
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#loginsignup,
+#LOGO,
+#anchers {
+    /* background-color: #86a7fc64; */
+    border-radius: 5px;
+}
+
+#coat {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 40%;
+    margin-top: 10%;
+    border-radius: 5px;
+    background-color: #86a7fc64;
+    padding: 10px;
+    max-height: 300px;
+}
+
+#MainBooking {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+#search-flight {
+    /* border: 1px solid black; */
+    width: 50%;
+    margin-right: 10px;
+    padding: 10px;
+   max-height: 100%;
+   background-color: rgba(250, 235, 215, 0.636);
+   border-radius: 5px;
+   margin-top: 25px;
+}
+form {
+    margin-top: 20px;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+form input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background-color: #86a7fc64;
+    cursor: pointer;
+}
+
+#shownsearch{
+    width: 100%;
+    max-height: 70vh;
+    /* border: 1px solid black; */
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.sercher{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    /* border: 1px solid rgb(206, 16, 16); */
+}
