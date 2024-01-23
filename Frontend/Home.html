@@ -4,14 +4,13 @@
 <head>
     <title>Flight Booking</title>
     <link rel="stylesheet" type="text/css" href="./home.css" />
-        <!-- Include jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    
-        <!-- Include jQuery UI -->
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-   
-    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 
 <body>
@@ -46,12 +45,14 @@
             <h2 style="text-align: center;">Search Flight</h2>
             <form>
                 <label for="departure">Departure:</label>
-                <input type="text" id="departure" name="departure" list="destinationList" placeholder="Enter departure location">
+                <input type="text" id="departure" name="departure" list="destinationList"
+                    placeholder="Enter departure location">
                 <label for="departure">Departure:</label>
 
                 <!-- ////////////// -->
 
-                <input type="text" id="destination" name="destination"  list="destinationList" placeholder="Enter destination location">
+                <input type="text" id="destination" name="destination" list="destinationList"
+                    placeholder="Enter destination location">
                 <label for="destination">Departure:</label>
                 <input type="submit" value="Search">
             </form>
@@ -65,18 +66,18 @@
                 <div class="sercher">
 
                 </div>
-                
-                
+
+
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
 <script>
     // Define auto-suggestion data
-    var availableLocations = ["City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z","City A", "City B", "City C", "City X", "City Y", "City Z"];
+    var availableLocations = ["City A", "City B", "City C", "City X", "City Y", "City Z", "City A", "City B", "City C", "City X", "City Y", "City Z", "City A", "City B", "City C", "City X", "City Y", "City Z", "City A", "City B", "City C", "City X", "City Y", "City Z"];
 
     // Apply auto-suggestion to the departure and destination inputs
     $("#departure, #departure").autocomplete({
