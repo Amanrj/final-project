@@ -2,35 +2,57 @@
 <html>
 
 <head>
-    <title>Flight Booking</title>
+    <link rel="icon" href="./Images/title-home.gif" type="image/x-icon">
+    <title>Flight Booking  </title>
     <link rel="stylesheet" type="text/css" href="./home.css" />
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Include jQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <!-- ///Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ///Lord Icon -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>Flight Booking  </title>
 </head>
 
 <body>
-    <div id="nav">
-        <ul>
-            <div id="LOGO">
-                <li><a href=""> LOGO</a></li>
+    <nav class="navbar navbar-expand-lg  bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand" href="#">
+                    <img class="rounded-circle"
+                        src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                        alt="Bootstrap" width="30" height="30">
+                </a>
+                <button class="btn btn-outline-success" type="submit">LogOut</button>
             </div>
-            <div id="anchers">
-                <li><a href="Home.html">HOME</a></li>
-                <li><a href="About.html">Your Cart</a></li>
-                <li><a href="Contact.html">Favourites</a></li>
-                <li><a href="Contact.html">Your Order</a></li>
-            </div>
-            <div id="loginsignup">
-                <li><a href="Login.html">Login</a></li>
-                <li><a href="Register.html">Register</a></li>
-            </div>
-        </ul>
-    </div>
+        </div>
+    </nav>
     <div id="MainBooking">
         <div id="coat">
             <p style="text-transform: uppercase; font-size: 40px">
@@ -66,8 +88,6 @@
                 <div class="sercher">
 
                 </div>
-
-
             </div>
         </div>
     </div>
