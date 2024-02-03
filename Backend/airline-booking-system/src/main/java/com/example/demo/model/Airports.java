@@ -10,7 +10,6 @@ import lombok.Data;
 
 @Entity
 public class Airports {
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

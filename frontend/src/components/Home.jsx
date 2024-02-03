@@ -1,22 +1,34 @@
 
 import { useAuth0 } from "@auth0/auth0-react";
 import TravelForm from "./TravelForm";
+import LoadingComponent from "./LoadingComponent";
+import React,{useEffect, useState} from "react";
+import FlighList from "./HomeFlightList";
 const Home =()=>{
     const { loginWithRedirect,logout,user,isAuthenticated,isLoading } = useAuth0();
+    const [filghtData,setFlightData]=useState({});
+    const [listOfFlight,setListofFlight]=useState([]);
+
+    useEffect(()=>{
+      if(Object.keys(filghtData).length>0){
+        console.log("hrllo from main")
+        console.log(filghtData);
+      }
+
+    },[filghtData])
+
+    const setData=(data)=>{
+      setFlightData(data)
+    }
     if (isLoading) {
-        return <p>Loading...</p>;
+        return <LoadingComponent/>
       }
     return  <>
 
-    <TravelForm/>
+    <TravelForm setData={setData}/>
+    {/* {  <FlighList data={filghtData}/>}  */}
+   
 
-
-    {/* <p>This is home page</p>
-    {isAuthenticated ? (
-      <p>{user?.name}</p>
-    ) : (
-      <button onClick={() => loginWithRedirect()}>Log In</button>
-    )} */}
    
   </>
 }

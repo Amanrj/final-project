@@ -20,6 +20,7 @@
   margin: auto;
   width: 85%;
   position: relative;
+  
 }
 .layer-3-1 {
   display: flex;
@@ -70,15 +71,31 @@
   border: none;
 }
 .from-to {
-  /* border: 1px solid; */
+  width: 40%;
 }
-.from-to > div {
+.date-select{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.from-to > div , .date-select > div  {
   /* border: 1px solid red; */
   display: grid;
   flex-direction: column;
   justify-content: space-between;
+  width: 45%;
+  /* border: 1px solid; */
+
 }
-.from-to > label {
+.travel {
+  /* border: 1px solid red; */
+  display: grid;
+
+}
+
+.from-to > label, .date-select > label {
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -100,12 +117,151 @@
   color: inherit;
   font-size: 20px;
 }
-.input-bottom-lable {
+.input-bottom-lable  {
   font-size: 12px;
+  font-weight: 450;
 }
 .div-searchFlight{
     /* border: 1px solid; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+input[type="date"] {
+  /* Reset some default styles */
+  /* appearance: none; */
+  /* -webkit-appearance: none;
+  -moz-appearance: none; */
+  /* display: inline-block;
+  padding: 0.4em 0.8em;
+  margin: 0; */
+  width: 100%;
+  /* Add your own styles */
+  border: 1px transparent;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: black;
+  outline: none;
+  text-transform: uppercase;
+  
+  background-color: #fff; /* Specify your desired background color */
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  font-size: 18px;
+}
+
+/* Remove the increment and decrement buttons in Chrome and Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Adjust the width to your preference */
+input[type="number"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  
+  /* Add other styling properties as needed */
+}
+
+/* .aaa{
+  position: relative;
+} */
+.ul{
+  position: absolute;
+  /* border: 1px solid red; */
+  background-color: #fff;
+  max-height: 300px;
+  min-width: 300px;
+  overflow-y: auto;
+  max-width: 400px;
+  overflow-x: hidden;
+  list-style-type: none;
+  padding: 8px;  
+  /* border: 1px solid #bbb2b2; */
+  box-shadow: 0 2px 6px 0 hsla(0,0%,54.1%,.25);
+  border-radius: 2px;
+  
+}
+.ul> div{
+  /* border: 1px solid ; */
+  margin-bottom: 5px;
+  display: block;
+  padding: 5px;
+  border-radius: 2px;
+}
+.ul > div:hover{
+  background-color: #00b8f544;
+  
+}
+.ul > div > p{
+  border:  1px solid red;
+  margin-bottom: auto;
+}
+.ul > div >label{
+  font-size: 10px;
+}
+
+.ul-div-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+.ul-div-1-1{
+  max-width: 85%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowarp;
+  font-size: 14px;
+  color: #101010;
+  font-weight: 500;
+}
+.ul-div-1-2{
+  width: 12%;
+  font-size: 13px;
+  color: #7f8386;
+  font-weight: 400;
+  margin-top: 8px;
+  text-align: right;
+}
+.ul-div-2{
+  font-size: 12px;
+  color: #7f8386;
+  font-weight: 400;
+}
+
+
+
+/* Media Quary */
+@media screen and (max-width: 992px) {
+  .layer-3{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid; */
+  }
+  .layer-3-2{
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 10px;
+  }
+  .layer-3-2 > div{
+    /* border: 1px solid; */
+    
+  }
+  .from-to{
+    /* border: 1px solid green;  */
+    display: grid;
+    width: 100%;
+  }
+  .from-to > div{
+    width: 45%;
+  }
+  .div-searchFlight{
+    justify-content: center;
+  }
 }

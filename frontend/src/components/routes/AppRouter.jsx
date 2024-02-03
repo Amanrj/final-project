@@ -14,7 +14,7 @@ const AppRouter = () => {
       <Route path='/' element={<Home />} />
       <Route path='/tickets' element={<PrivateRoutes><Tickets/></PrivateRoutes>} />
       <Route path='/about' element={<About />} />
-      <Route path='/favorites' element={<Favorites />} />
+      <Route path='/favorites' element={<PrivateRoutes>  <Favorites /></PrivateRoutes>} />
     </Routes>
   );
 };

@@ -32,29 +32,22 @@ public class MainController {
 	@Autowired
 	private Airports airports;
 	
-	@GetMapping("/")
-	public  String met() {
-		return "Hello From Backend";
-	}
-	@GetMapping("/hello/{name}") 
-	 public static String func( @PathVariable("name") String name){
-		return "Hello Brother "+name;
-	}
 	@GetMapping("/flight")
 	public  ResponseEntity<List<FlightData>> allFlight() throws Exception{
 		
-		
 		 List<FlightData> list=flightService.viewAllFlight();
-		
 		return  new ResponseEntity<List<FlightData>>(list,HttpStatus.OK);
 	}
 	
 	@GetMapping("/airports/{name}")
 	public ResponseEntity<List<com.example.demo.model.Airports>> getAllAirport(@PathVariable("name") String airportName){
-		
-		
-		
+
 		return  new ResponseEntity<List<com.example.demo.model.Airports>>(airports.findAllAirports(airportName),HttpStatus.OK);
 	}
-
+	
+	@GetMapping("/flight/{number}")
+	public ResponseEntity<List<FlightData>> findFligtByNumber(@PathVariable("number") String number) throws Exception{
+		
+		return new ResponseEntity<List<FlightData>>(flightService.FindByFlightNumber(number),HttpStatus.OK);
+	}
 }

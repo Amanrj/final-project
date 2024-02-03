@@ -7,7 +7,6 @@ import AppRouter from './components/routes/AppRouter'; // Adjusted the import pa
 function App() {
   return (
     <div className="App">
-      
         <Navbar />
         <AppRouter />
       

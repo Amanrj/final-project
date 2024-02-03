@@ -31,4 +31,11 @@ public class FlightServiceImpl implements FlightService {
 		return null;
 	}
 
+	@Override
+	public List<FlightData> FindByFlightNumber(String flightNumber) throws Exception {
+		
+		
+		return  (List<FlightData>) flighdetaildao.findByFlightNo(flightNumber);
+	}
+
 }
