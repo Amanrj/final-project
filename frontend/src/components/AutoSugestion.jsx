@@ -12,6 +12,7 @@ const AutoSugation = ({ city, setData }) => {
         API.get(`/airports/${city}`).then((ele) => {
             setSugest(ele.data)
         }).catch((ele) => {
+
         })
     }
     useEffect(() => {
@@ -20,7 +21,6 @@ const AutoSugation = ({ city, setData }) => {
 
         if (city !== "") {
             interval = setTimeout(() => {
-
                 testing();
             }, 500);
         }
@@ -29,24 +29,27 @@ const AutoSugation = ({ city, setData }) => {
         }
     }, [city])
 
+    if (sugest.length > 0) {
 
-    return <>
 
-        <ul className="ul">
+        return <>
 
-            {sugest.map((ele, i) => (
-                <div onClick={() => {
-                    callfunction(ele);
-                }} key={ele.airportId} id="ul-div">
-                    <div className="ul-div-1">
-                        <div className="ul-div-1-1"> {ele.city} </div>
-                        <div className="ul-div-1-2">{ele.code}</div>
+            <ul className="ul">
+
+                {sugest.map((ele, i) => (
+                    <div onClick={() => {
+                        callfunction(ele);
+                    }} key={ele.airportId} id="ul-div">
+                        <div className="ul-div-1">
+                            <div className="ul-div-1-1"> {ele.city} </div>
+                            <div className="ul-div-1-2">{ele.code}</div>
+                        </div>
+                        <div className="ul-div-2">{ele.airport}</div>
                     </div>
-                    <div className="ul-div-2">{ele.airport}</div>
-                </div>
-            ))
-            }
-        </ul>
-    </>
+                ))
+                }
+            </ul>
+        </>
+    }
 }
 export default AutoSugation;

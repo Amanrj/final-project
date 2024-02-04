@@ -38,4 +38,10 @@ public class FlightServiceImpl implements FlightService {
 		return  (List<FlightData>) flighdetaildao.findByFlightNo(flightNumber);
 	}
 
+	@Override
+	public List<FlightData> findFlightByOriginToDestination(String origin, String destination) throws Exception {
+		
+		return flighdetaildao.findByOriginToDestination(origin, destination);
+	}
+
 }

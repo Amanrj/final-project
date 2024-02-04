@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="FlightCard.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+          <section class="dashboard">
+            <header class="booking-bar">
+              <div class="booking-bar__info">
+                <h2 class="booking-bar__heading">Barcelona (BCN) - Rome (ROM)</h2>
+                <p class="booking-bar__sub-heading">1 adult - Economy</p>
+              </div>
+              <!-- /.booking-bar__info -->
+              <div class="booking-bar__inputs">
+                <div class="icon-input">
+                  <i class="icon-input__icon far fa-calendar-alt"></i>
+                  <input type="text" placeholder="Departure Date" value="Thursday, April 2">
+                </div>
+                <div class="icon-input">
+                  <i class="icon-input__icon far fa-calendar-alt"></i>
+                  <input type="text" placeholder="Return Date">
+                </div>
+              </div>
+              <!-- booking-bar__inputs -->
+            </header>
+      
+            <section class="flights">
+              <header>
+                <p class="flights__total">183 <span>results</span></p>
+                <section class="top-flights">
+                  <div class="top-flight-card">
+                    <p class="top-flight-card__price styled-price"><sup>$</sup>34</p>
+                    <div class="top-flight-card__info">
+                      <p class="top-flight-card__heading">Cheapest</p>
+                      <p class="top-flight-card__sub-heading">2h 37m average</p>
+                    </div>
+                    <!-- /.top-flight-card__info -->
+                  </div>
+                  <!-- /.top-flight-card -->
+                  <div class="top-flight-card is-active">
+                    <p class="top-flight-card__price styled-price"><sup>$</sup>56</p>
+                    <div class="top-flight-card__info">
+                      <p class="top-flight-card__heading">Best</p>
+                      <p class="top-flight-card__sub-heading">1h 50m average</p>
+                    </div>
+                    <!-- /.top-flight-card__info -->
+                  </div>
+                  <!-- /.top-flight-card -->
+                  <div class="top-flight-card">
+                    <p class="top-flight-card__price styled-price"><sup>$</sup>93</p>
+                    <div class="top-flight-card__info">
+                      <p class="top-flight-card__heading">Fastest</p>
+                      <p class="top-flight-card__sub-heading">1h 27m average</p>
+                    </div>
+                    <!-- /.top-flight-card__info -->
+                  </div>
+                  <!-- /.top-flight-card -->
+                  <div class="top-flight-card">
+                    <p class="top-flight-card__price styled-price"><sup>$</sup>58</p>
+                    <div class="top-flight-card__info">
+                      <p class="top-flight-card__heading">Fly Greener</p>
+                      <p class="top-flight-card__sub-heading">2h 42m average</p>
+                    </div>
+                    <!-- /.top-flight-card__info -->
+                  </div>
+                  <!-- /.top-flight-card -->
+                </section>
+              </header>
+              
+              <section class="flights-list">
+                <article class="flight-card flights-list__item">
+                  <div class="flight-card__airlines">
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                  </div>
+                  <!-- /.flight-card__airlines -->
+                  <div class="flight-card__departure">
+                    <time class="flight-card__time">10:30 AM</time>
+                    <h2 class="flight-card__city">Barcelona</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__departure -->
+                  <div class="flight-card__route">
+                    <p class="flight-card__duration">1hr 50m</p>
+                    <div class="flight-card__route-line route-line" aria-hidden="true">
+                      <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                    </div>
+                    <!-- flight-card__route-line -->
+                    <p class="flight-card__type">Non-stop</p>
+                  </div>
+                  <div class="flight-card__arrival">
+                    <time class="flight-card__time">10:30 AM</time>
+                    <h2 class="flight-card__city">Rome</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__arrival -->
+                  <div class="flight-card__action">
+                    <p class="flight-card__price styled-price"><sup>$</sup>93<sub>USD</sub></p>
+                    <button class="flight-card__cta button button--orange">Select</button>
+                  </div>
+                  <!-- /.flight-card__action -->
+                </article>
+                <!-- /.flight-card -->
+                <article class="flight-card flights-list__item">
+                  <div class="flight-card__airlines">
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                  </div>
+                  <!-- /.flight-card__airlines -->
+                  <div class="flight-card__departure">
+                    <time class="flight-card__time">7:45 AM</time>
+                    <h2 class="flight-card__city">Barcelona</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__departure -->
+                  <div class="flight-card__route">
+                    <p class="flight-card__duration">7hr 55m</p>
+                    <div class="flight-card__route-line route-line" aria-hidden="true">
+                      <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop" aria-hidden="true" style="left: 50%">
+                        <p class="route-line__stop-name">VIE</p>
+                      </div>
+                    </div>
+                    <!-- flight-card__route-line -->
+                  </div>
+                  <div class="flight-card__arrival">
+                    <time class="flight-card__time">3:40PM</time>
+                    <h2 class="flight-card__city">Rome</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__arrival -->
+                  <div class="flight-card__action">
+                    <p class="flight-card__price styled-price"><sup>$</sup>68<sub>USD</sub></p>
+                    <button class="flight-card__cta button button--orange">Select</button>
+                  </div>
+                  <!-- /.flight-card__action -->
+                </article>
+                <!-- /.flight-card -->
+                <article class="flight-card flights-list__item">
+                  <div class="flight-card__airlines">
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                  </div>
+                  <!-- /.flight-card__airlines -->
+                  <div class="flight-card__departure">
+                    <time class="flight-card__time">10:35 AM</time>
+                    <h2 class="flight-card__city">Barcelona</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__departure -->
+                  <div class="flight-card__route">
+                    <p class="flight-card__duration">17hr 15m</p>
+                    <div class="flight-card__route-line route-line" aria-hidden="true">
+                      <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop" aria-hidden="true" style="left: 25%">
+                        <p class="route-line__stop-name">PMI</p>
+                      </div>
+                      <!-- /.route-line__stop -->
+                      <div class="route-line__stop" aria-hidden="true" style="left: 75%">
+                        <p class="route-line__stop-name">VLC</p>
+                      </div>
+                      <!-- /.route-line__stop -->
+                    </div>
+                    <!-- flight-card__route-line -->
+                  </div>
+                  <div class="flight-card__arrival">
+                    <time class="flight-card__time">3:50PM</time>
+                    <h2 class="flight-card__city">Rome</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__arrival -->
+                  <div class="flight-card__action">
+                    <p class="flight-card__price styled-price"><sup>$</sup>82<sub>USD</sub></p>
+                    <button class="flight-card__cta button button--orange">Select</button>
+                  </div>
+                  <!-- /.flight-card__action -->
+                </article>
+                <!-- /.flight-card -->
+                <article class="flight-card flights-list__item">
+                  <div class="flight-card__airlines">
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                    <div class="flight-card__airline">
+                      <img src="//unsplash.it/30/30" alt="">
+                    </div>
+                    <!-- /.flight-card__airline -->
+                  </div>
+                  <!-- /.flight-card__airlines -->
+                  <div class="flight-card__departure">
+                    <time class="flight-card__time">9:30 AM</time>
+                    <h2 class="flight-card__city">Barcelona</h2>
+                    <time class="flight-card__day">Tuesday, Apr 21, 2020</time>
+                  </div>
+                  <!-- /.flight-card__departure -->
+                  <div class="flight-card__route">
+                    <p class="flight-card__duration">14hr 25m</p>
+                    <div class="flight-card__route-line route-line" aria-hidden="true">
+                      <div class="route-line__stop route-line__start" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop route-line__end" aria-hidden="true"></div>
+                      <!-- /.route-line__start -->
+                      <div class="route-line__stop" aria-hidden="true" style="left: 25%">
+                        <p class="route-line__stop-name">CGN</p>
+                      </div>
+                      <!-- /.route-line__stop -->
+                      <div class="route-line__stop" aria-hidden="true" style="left: 75%">
+                        <p class="route-line__stop-name">KTW</p>
+                      </div>
+                      <!-- /.route-line__stop -->
+                    </div>
+                    <!-- flight-card__route-line -->
+                  </div>
+                  <div class="flight-card__arrival">
+                    <time class="flight-card__time">11:55 PM</time>
+                    <h2 class="flight-card__city">Rome</h2>
+                    <time class="flight-card__day">Tuesday, Apr 22, 2020</time>
+                  </div>
+                  <!-- /.flight-card__arrival -->
+                  <div class="flight-card__action">
+                    <p class="flight-card__price styled-price"><sup>$</sup>91<sub>USD</sub></p>
+                    <button class="flight-card__cta button button--orange">Select</button>
+                  </div>
+                  <!-- /.flight-card__action -->
+                </article>
+                <!-- /.flight-card -->
+              </section>
+      
+            </section>
+      
+            <aside class="user-card">
+              <figure class="user-card__avatar">
+                <img src="//picsum.photos/50/50" alt="">
+              </figure>
+              <div class="p user-card__heading">
+                Hello, <span class="user-card__name">Ford Prefect</span>
+              </div>
+            </aside>
+            <aside class="sidebar">
+              <section class="sidebar-section">
+                <button class="button button--purple sidebar__action">Get price alerts</button>
+              </section>
+              <!-- /.sidebar-section -->
+              
+              <section class="sidebar-section">
+                <h2 class="sidebar-section__heading">Stops</h2>
+                <ul class="choice-list">
+                  <li class="choice-list__item">
+                    <input id="checkbox-1" type="checkbox" class="checkbox" checked="checked">
+                    <label for="checkbox-1">Non-stop</label>
+                    <span class="choice-list__aside">$34</span>
+                  </li>
+                  <li class="choice-list__item">
+                    <input id="checkbox-2" type="checkbox" class="checkbox">
+                    <label for="checkbox-2">1 Stop</label>
+                    <span class="choice-list__aside">$70</span>
+                  </li>
+                  <li class="choice-list__item">
+                    <input id="checkbox-3" type="checkbox" class="checkbox">
+                    <label for="checkbox-3">2+ Stops</label>
+                    <span class="choice-list__aside">$98</span>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-section">
+                <h2 class="sidebar-section__heading">Baggage</h2>
+                <ul class="choice-list">
+                  <li class="choice-list__item">
+                    <input id="checkbox-4" type="checkbox" class="checkbox">
+                    <label for="checkbox-4">1 small bag</label>
+                    <span class="choice-list__aside">$34</span>
+                  </li>
+                  <li class="choice-list__item">
+                    <input id="checkbox-5" type="checkbox" class="checkbox" checked="checked">
+                    <label for="checkbox-5">2 cabin bags</label>
+                    <span class="choice-list__aside">$58</span>
+                  </li>
+                  <li class="choice-list__item">
+                    <input id="checkbox-6" type="checkbox" class="checkbox">
+                    <label for="checkbox-6">Checked-in bag</label>
+                    <span class="choice-list__aside">$112</span>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar-section">
+                <h2 class="sidebar-section__heading">Airports</h2>
+                <ul class="choice-list">
+                  <li class="choice-list__item">
+                    <input id="checkbox-7" type="checkbox" class="checkbox">
+                    <label for="checkbox-7">CIA</label>
+                    <span class="choice-list__aside">Rome Ciampino</span>
+                  </li>
+                  <li class="choice-list__item">
+                    <input id="checkbox-8" type="checkbox" class="checkbox" checked="checked">
+                    <label for="checkbox-8">FCO</label>
+                    <span class="choice-list__aside">Rome Fiumicino</span>
+                  </li>
+                </ul>
+              </section>
+            </aside>
+          </section>
+          <!-- /.dashboard -->
+        </div>
+        <!-- /.container -->
+      </main>
+    
+</body>
+</html>

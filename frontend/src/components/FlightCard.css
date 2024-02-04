@@ -1,0 +1,172 @@
+:root {
+    --color-off-white: 240, 18%, 97%;
+    --color-purple: 239, 39%, 45%;
+    --color-light-purple: 240, 52%, 94%;
+    --color-orange: 13, 94%, 66%;
+    --color-dark-orange: 13, 94%, 46%;
+    --font-weight-normal: 400;
+    --font-weight-medium: 600;
+    --font-weight-bold: 700;
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .container {
+    margin: 64px auto;
+    width: 85%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    max-height: 1000px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .stickyParagraph {
+    position: sticky;
+    top: -20px;
+    background-color: #ffffff; /* You can set your desired background color */
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+
+  /* Scroll Bar  */
+  .container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+    border-radius: 10px;
+  }
+  
+  .container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: HSL(var(--button-background-color, var(--color-orange)));
+  
+  }
+  
+  .flights-list{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    margin-top: 10px;
+  }
+
+
+
+  
+  .button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: HSL(var(--button-background-color, var(--color-orange)));
+    color: HSL(var(--button-text-color, 0, 0%, 100%));
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.7s var(--ease-out-quart), color 0.7s var(--ease-out-quart);
+  }
+  .button:hover {
+    background-color: HSL(var(--button-hover-background-color, var(--color-dark-orange)));
+    color: HSL(var(--button-hover-text-color, 0, 0%, 100%));
+  }
+  .button--purple {
+    --button-background-color: var(--color-light-purple);
+    --button-text-color: var(--color-purple);
+    --button-hover-background-color: var(--color-purple);
+  }
+
+  .route-line {
+    position: relative;
+    margin: 1rem 0 0;
+    width: 100%;
+    height: 1px;
+    border: 0.1rem dashed HSL(var(--color-purple));
+  }
+  .route-line__stop {
+    border-radius: 100%;
+    box-sizing: content-box;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    background-color: HSL(var(--color-purple));
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .route-line__stop-name {
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    transform: translateX(-0.7rem);
+  }
+  .route-line__start {
+    left: 0;
+    border: 0.6rem solid HSL(var(--color-purple));
+    background-color: #fff;
+  }
+  .route-line__end {
+    right: 0;
+    border: 0.6rem solid HSL(var(--color-light-purple));
+    transform: translate3d(50%, -50%, 0);
+  }
+ 
+  .airlines-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+  }
+  
+
+  .flight-card__departure {
+    margin-left: 2rem;
+  }
+  .flight-card__arrival {
+    margin-right: 3rem;
+    text-align: right;
+  }
+  .flight-card__route {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+  }
+  .flight-card__duration,
+  .flight-card__type {
+    font-size: 18px;
+  }
+  .flight-card__type {
+    margin-top: 1rem;
+  }
+  .flight-card__action {
+    text-align: center;
+  }
+  .flight-card__time {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+  }
+  .flight-card__city {
+    margin-bottom: 0.4rem;
+    font-size: 22px;
+  }
+  .flight-card__day {
+    font-size: 18px;
+  }
+  .flight-card__price {
+    margin-bottom: 1rem;
+    font-size: 40px;
+    font-weight: 500;
+    color: HSL(var(--color-purple));
+  }
+  .flight-card__cta {
+    min-width: 16rem;
+  }

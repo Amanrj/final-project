@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TravelForm.css'
 import AutoSugation from './AutoSugestion';
+import validateData from './ValidateData';
 
 const preData = {
   oneway: true,
@@ -39,7 +40,6 @@ const TravelForm = ({setData}) => {
       }
     }
   }
-  // console.log(finalData);
 
   const setFromTypeinput = (event) => {
     SetFromType(event.target.value)
@@ -125,7 +125,9 @@ const TravelForm = ({setData}) => {
             <div className='div-searchFlight'>
               <div >
                 <button onClick={()=>{
-                  setData(finalData);
+                  if(validateData(finalData)){
+                    setData(finalData);
+                  }
                 }} className='searchFlight'>Search Flight</button>
               </div>
             </div>

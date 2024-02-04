@@ -50,4 +50,9 @@ public class MainController {
 		
 		return new ResponseEntity<List<FlightData>>(flightService.FindByFlightNumber(number),HttpStatus.OK);
 	}
+	@GetMapping("/flight/{origin}/{destination}")
+	public ResponseEntity<List<FlightData>> findFlightByOriginDestination(@PathVariable("origin") String origin,@PathVariable("destination")String destination) throws Exception{
+		return new ResponseEntity<List<FlightData>>(flightService.findFlightByOriginToDestination(origin, destination),HttpStatus.OK);
+		
+	}
 }
