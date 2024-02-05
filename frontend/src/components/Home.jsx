@@ -40,7 +40,7 @@ const Home =()=>{
     return  <>
 
     <TravelForm setData={setData}/>
-    <FlighList data={listOfFlight} date={filghtData.fromDate}/>
+    <FlighList data={listOfFlight} person={filghtData.person} date={filghtData.fromDate}/>
    
 
    

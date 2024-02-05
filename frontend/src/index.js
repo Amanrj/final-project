@@ -5,20 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
-
+import FlightPersonProvider from './context/FlightPerson';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-    <Auth0Provider
-        domain="dev-qtoto6rrmzbyzp0l.us.auth0.com"
-        clientId="17wlR4jre0MOM4kutZfYjYOO7gXmIP98"
-        authorizationParams={{
-            redirect_uri: window.location.origin
-        }}
-    >
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Auth0Provider>,
+    <FlightPersonProvider>
+        <Auth0Provider
+            domain="dev-qtoto6rrmzbyzp0l.us.auth0.com"
+            clientId="17wlR4jre0MOM4kutZfYjYOO7gXmIP98"
+            authorizationParams={{
+                redirect_uri: window.location.origin
+            }}
+        >
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Auth0Provider>
+    </FlightPersonProvider>
 
 );
 

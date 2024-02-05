@@ -24,9 +24,12 @@
   .stickyParagraph {
     position: sticky;
     top: -20px;
-    background-color: #ffffff; /* You can set your desired background color */
-    padding-bottom: 10px;
+    background-color: #fefcfc; 
+    padding-bottom: 5px;
     font-weight: bold;
+   width: 100%;
+    z-index: 4;
+    border-bottom: 1px solid #d3d3d3;
   }
 
   /* Scroll Bar  */

@@ -20,7 +20,7 @@ const validateData = (finalData) => {
     }
   
     // Validate the number of persons
-    if (finalData.persion < 1 || finalData.persion > 9) {
+    if (finalData.person < 1 || finalData.person > 9) {
       alert("Number of persons should be between 1 and 9");
       return false;
     }

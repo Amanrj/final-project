@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TravelForm.css'
 import AutoSugation from './AutoSugestion';
 import validateData from './ValidateData';
-
+import { useLocation } from 'react-router-dom';
 const preData = {
   oneway: true,
   from: "",
@@ -11,16 +11,15 @@ const preData = {
   toCity: "",
   fromDate: "",
   toDate: "",
-  persion: 0
+  person: 0
 }
 
 
-const TravelForm = ({setData}) => {
+const TravelForm = ({ setData }) => {
   const today = new Date().toISOString().split('T')[0];
   const [fromType, SetFromType] = useState("");
   const [toType, SetToType] = useState("");
   const [finalData, finalDataUpdate] = useState(preData);
-
 
 
   const setFromCity = (eventData) => {
@@ -118,14 +117,14 @@ const TravelForm = ({setData}) => {
             <div>
               <div className='travel'>
                 <label htmlFor='travel-number' className='upper-lable'>Travellers</label>
-                <input onChange={setPerson} name='persion' placeholder='Persion' id='travel-number' min={0} max={9} type='number' />
+                <input onChange={setPerson} name='person' placeholder='person' id='travel-number' min={0} max={9} type='number' />
                 <label htmlFor='travel-number' className='input-bottom-lable'>Total Travels</label>
               </div>
             </div>
             <div className='div-searchFlight'>
               <div >
-                <button onClick={()=>{
-                  if(validateData(finalData)){
+                <button onClick={() => {
+                  if (validateData(finalData)) {
                     setData(finalData);
                   }
                 }} className='searchFlight'>Search Flight</button>
