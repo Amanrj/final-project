@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import Walkthrough from './Walkthrough';
 import { useAuth0 } from '@auth0/auth0-react';
+import API from "./Axios";
 
 const Navbar = () => {
   const navBarData = [
@@ -27,8 +28,16 @@ const Navbar = () => {
   // const [logincheck,logincheckSet]=useState(false);
   const [isTourOpen, setIsTourOpen] = useState(false);
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
-  if(isAuthenticated){
+
+  
+
+  if(isAuthenticated && !isLoading){
     console.log(user)
+    API.post('/user',user).then((res)=>{
+      console.log(res.data,"BackEnd Respond");
+    }).catch((ele)=>{
+      console.log(ele.message);
+    })
   }
   // console.log(user, isAuthenticated);
   const setColaps = () => {

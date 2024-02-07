@@ -8,22 +8,28 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.UserDetails;
 import com.example.demo.repositery.UserDetailsDao;
 
-
 @Service
 public class UserServiceipl implements UserService {
-	
+
 	@Autowired
 	private UserDetailsDao userDao;
 
 	@Override
 	public UserDetails saveuser(UserDetails user) throws Exception {
-		return userDao.save(user);
-		
+
+		UserDetails findedUser = userDao.findByemail(user.getEmail());
+
+		if (findedUser != null) {
+			return findedUser;
+		} else {
+			return userDao.save(user);
+		}
+
 	}
 
 	@Override
 	public List<UserDetails> getAllUser() throws Exception {
-	
+
 		return userDao.findAll();
 	}
 

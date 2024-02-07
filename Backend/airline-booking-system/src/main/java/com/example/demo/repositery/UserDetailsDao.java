@@ -10,6 +10,4 @@ public interface UserDetailsDao extends JpaRepository<UserDetails, String> {
 	
 	UserDetails findByemail(String sub);
 	
-	
-
 }

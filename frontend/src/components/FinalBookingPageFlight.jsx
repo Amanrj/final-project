@@ -1,10 +1,25 @@
 import React, { useRef, useState, useContext } from 'react';
 import { myContext } from "../context/FlightPerson";
+import { useAuth0 } from '@auth0/auth0-react';
+import API from "./Axios";
+import ToastMessage from './ToastMessage';
 
 
 
 const FinalBookingPageFlight = () => {
     const { bookingDetails, setBookingDetails } = useContext(myContext);
+    const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+    const [isBooking, setIsBooking] = useState(false);
+
+    // if(isAuthenticated && !isLoading){
+    //   console.log(user)
+    //   API.post('/user',user).then((res)=>{
+    //     console.log(res.data,"BackEnd Respond");
+    //   }).catch((ele)=>{
+    //     console.log(ele.message);
+    //   })
+    // }
+
     console.log(bookingDetails);
     const cangeDateFormate = (date) => {
         const inputDate = new Date(date);
@@ -24,7 +39,17 @@ const FinalBookingPageFlight = () => {
     }
 
     const handelBooking=()=>{
-        alert("Booking Done");
+        setIsBooking(true);
+        if(isAuthenticated && !isBooking){
+            API.post(`/booking/${user.email}`,bookingDetails).then((res)=>{
+                console.log(res.data,"Booking Done");
+            }).catch((err)=>{
+                console.log(err.message);
+            })
+
+        }else{
+            alert("Booking in prossess...")
+        }
     }
 
     const convertToAMPM = (timeString) => {
@@ -99,12 +124,11 @@ const FinalBookingPageFlight = () => {
                 bookingDetails.address &&
                 <>
                 <div className='flights-list-final-book-button'>
-                    <button onClick={handelback} className='cancle-Payment'>Back</button>
-                    <button onClick={handelBooking} className='pay-booking'>{`Pay ${(+bookingDetails.economyFare) * (+bookingDetails.person)} INR`}</button>
+                    <button hidden={isBooking} onClick={handelback} className='cancle-Payment'>Back</button>
+                    <button onClick={handelBooking} className='pay-booking'>{ isBooking? "Booking...": `Pay ${(+bookingDetails.economyFare) * (+bookingDetails.person)} INR`}</button>
                 </div>
                 </>
             }
-
         </div>
 
     </>
