@@ -69,6 +69,9 @@
   margin-bottom: 12px;
   animation: zoomIn 0.5s ease forwards;
 }
+.flights-list{
+  animation: zoomIn 0.5s ease forwards;
+}
 .container-persondetail{
     animation: zoomIn 0.5s ease forwards;
 }

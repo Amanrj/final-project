@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,6 +59,8 @@ public class MainController {
 			@PathVariable("destination") String destination) throws Exception {
 		return new ResponseEntity<>(flightService.findFlightByOriginToDestination(origin, destination), HttpStatus.OK);
 	}
+	
+//	??User Things
 
 	@PostMapping("/user")
 	public ResponseEntity<UserDetails> saveOrVeryfyUser(@RequestBody UserDetails userdetails) throws Exception {
@@ -70,19 +73,24 @@ public class MainController {
 
 		return new ResponseEntity<List<UserDetails>>(userService.getAllUser(), HttpStatus.OK);
 	}
-	
+	@DeleteMapping("/user")
+	public ResponseEntity<String> deleteAllUser() throws Exception{
+		return new ResponseEntity<String>(userService.deleteAllUser(),HttpStatus.OK);
+	}
 	
 	
 //	Booking Test
 	
-	@GetMapping("/booking")
-	public ResponseEntity<List<BookingDetails>> getAllBooking() throws Exception{
-		return new ResponseEntity<List<BookingDetails>>(bookingservice.getAllBooking(),HttpStatus.OK);
+	@GetMapping("/booking/{user}")
+	public ResponseEntity<List<BookingDetails>> getAllBooking(@PathVariable("user") String user) throws Exception{
+		return new ResponseEntity<List<BookingDetails>>(bookingservice.getAllBooking(user),HttpStatus.OK);
 	}
-	@PostMapping("/booking")
-	public ResponseEntity<BookingDetails> saveBooking(@RequestBody BookingDetails bookingDetails) throws Exception{
-		return new ResponseEntity<BookingDetails>( bookingservice.saveBooking(bookingDetails),HttpStatus.OK);
+	@PostMapping("/booking/{user}")
+	public ResponseEntity<BookingDetails> saveBooking(@RequestBody BookingDetails bookingDetails,@PathVariable("user") String user) throws Exception{
+		return new ResponseEntity<BookingDetails>( bookingservice.saveBooking(bookingDetails,user),HttpStatus.OK);
 	}
-	
-	
+	@DeleteMapping("/booking")
+	public ResponseEntity<List<BookingDetails>> deleteBooking() throws Exception{
+		return new ResponseEntity<List<BookingDetails>>(bookingservice.deletAllBooking(),HttpStatus.OK);
+	}
 }

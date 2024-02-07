@@ -27,4 +27,10 @@ public class UserServiceipl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Override
+	public String deleteAllUser() throws Exception {
+		userDao.deleteAll();
+		return "User Delete ";
+	}
+
 }

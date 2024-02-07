@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,8 @@ public class BookingDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer bookingDetailsId;
 	
-	@OneToOne
-    private Address address;
+	@OneToOne(cascade = CascadeType.ALL)
+    private CustomerAddress address;
 	
     private String airline;
     private String airlineCode;
@@ -38,7 +39,7 @@ public class BookingDetails {
     private String origin;
     private int person;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<PersonDetails> personDetails;
 
     // Constructor
@@ -47,11 +48,11 @@ public class BookingDetails {
     }
 
     // Getters and setters
-    public Address getAddress() {
+    public CustomerAddress getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(CustomerAddress address) {
         this.address = address;
     }
 
@@ -209,7 +210,7 @@ public class BookingDetails {
 				+ flightNo + ", origin=" + origin + ", person=" + person + ", personDetails=" + personDetails + "]";
 	}
 
-	public BookingDetails(Integer bookingDetailsId, Address address, String airline, String airlineCode,
+	public BookingDetails(Integer bookingDetailsId, CustomerAddress address, String airline, String airlineCode,
 			String arrivalTime, String arrivalWeekday, String businessFare, String date, String departTime,
 			String departWeekday, String destination, String duration, String economyFare, String firstFare,
 			int flightId, String flightNo, String origin, int person, List<PersonDetails> personDetails) {

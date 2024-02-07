@@ -176,3 +176,49 @@
 .flight-card__price > label{
   font-size: 18px;
 }
+.flights-list-final{
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  /* border: 1px solid #d3d3d3; */
+  margin-top: 10px;
+}
+.flights-list-final-detsils{
+  width: 100%;
+  /* border: 1px solid; */
+}
+.flights-list-final-detsils-hadder{
+  width: 75%;
+  text-align: start;
+  margin: auto;
+  border-top: 2px solid #d3d3d3;
+  padding-top: 10px;
+}
+.flights-list-final-detsils-address{
+  width: 75%;
+  margin: auto;
+  margin-top: 15px;
+  border: 1px solid #d3d3d3;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px ;
+}
+.flights-list-final-book-button{
+  text-align: end;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.pay-booking {
+  background-color:#e43707;
+  border: 1px solid #e43707;
+  color: #fff;
+}
+.cancle-Payment{
+  margin-right: 15px;
+  background-color:#4647a0;
+  border: 1px solid #4647a0;
+  color: #fff;
+
+}

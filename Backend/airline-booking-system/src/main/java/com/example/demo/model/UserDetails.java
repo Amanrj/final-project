@@ -1,20 +1,30 @@
 package com.example.demo.model;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.Objects;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "sub"))
 public class UserDetails {
 	    
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Integer userId;
+		
+		@Column(unique = true)
 		private String sub;
 	    private String email;
 	    private String familyName;
@@ -24,6 +34,11 @@ public class UserDetails {
 	    private String nickname;
 	    private String picture;
 	    private Instant updatedAt;
+	    
+	    @OneToMany
+	    private List<BookingDetails> allBookigs;
+	    
+	    
 		public Integer getUserId() {
 			return userId;
 		}
@@ -84,14 +99,25 @@ public class UserDetails {
 		public void setUpdatedAt(Instant updatedAt) {
 			this.updatedAt = updatedAt;
 		}
+		
+		public UserDetails() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+		public List<BookingDetails> getAllBookigs() {
+			return allBookigs;
+		}
+		public void setAllBookigs(List<BookingDetails> allBookigs) {
+			this.allBookigs = allBookigs;
+		}
 		@Override
 		public String toString() {
 			return "UserDetails [userId=" + userId + ", sub=" + sub + ", email=" + email + ", familyName=" + familyName
 					+ ", givenName=" + givenName + ", locale=" + locale + ", name=" + name + ", nickname=" + nickname
-					+ ", picture=" + picture + ", updatedAt=" + updatedAt + "]";
+					+ ", picture=" + picture + ", updatedAt=" + updatedAt + ", allBookigs=" + allBookigs + "]";
 		}
 		public UserDetails(Integer userId, String sub, String email, String familyName, String givenName, String locale,
-				String name, String nickname, String picture, Instant updatedAt) {
+				String name, String nickname, String picture, Instant updatedAt, List<BookingDetails> allBookigs) {
 			super();
 			this.userId = userId;
 			this.sub = sub;
@@ -103,10 +129,7 @@ public class UserDetails {
 			this.nickname = nickname;
 			this.picture = picture;
 			this.updatedAt = updatedAt;
-		}
-		public UserDetails() {
-			super();
-			// TODO Auto-generated constructor stub
+			this.allBookigs = allBookigs;
 		}
 		
 	    

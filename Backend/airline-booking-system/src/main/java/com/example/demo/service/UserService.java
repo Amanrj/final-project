@@ -8,5 +8,5 @@ public interface UserService {
 	
 	public UserDetails saveuser(UserDetails user) throws Exception;
 	public List<UserDetails> getAllUser()throws Exception;
-	
+	public String deleteAllUser() throws Exception;
 }

@@ -30,15 +30,15 @@ const PersonDetails = () => {
         <div className="passangerdetails">
             {
 
-                bookingDetails.person > person.length  &&
-                < PersonDetailsForm   setPerson={setPerson} messaage={`Add Details of passanger ${person.length+1} out of ${bookingDetails.person}`} />
+                //  bookingDetails.person > person.length  &&
+                < PersonDetailsForm person={person}  setPerson={setPerson} messaage={`Add Details of passanger ${person.length+1} out of ${bookingDetails.person}`} />
             }
             {
-                person.length !=0 &&
+                person.length !=0 && !bookingDetails.address &&
                 <ShowPersonDetails  setPerson={setPerson} person={person}/>
             }
             {
-                 bookingDetails.person <= person.length  &&
+                 bookingDetails.person <= person.length && !bookingDetails.address &&
                  <Address  person={person} />
 
             }
