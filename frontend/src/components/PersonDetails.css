@@ -1,31 +1,149 @@
-.container-persondetail{
-    /* background-color: #d3d3d3; */
-    /* width: 75%; */
-    min-height: 100px;
-    margin: auto;
-    /* margin-top: 20px; */
-    border: 1px solid #d3d3d3;
-    border-radius: 5px;
+.container-persondetail {
+  /* background-color: #d3d3d3; */
+  /* width: 75%; */
+  min-height: 100px;
+  margin: auto;
+  /* margin-top: 20px; */
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
 }
 .container-persondetail > form {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 15px 20px;
 }
-.container-persondetail > form > div{
-    /* border: 1px solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.container-persondetail > form > div {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.container-persondetail  button{
-    padding: 4px 30px;
-    /* background-color: aqua; */
+.container-persondetail button {
+  padding: 4px 30px;
+  /* background-color: aqua; */
+  border-radius: 5px;
+}
+.passangerdetails {
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.person-main {
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #d3d3d3;
+  padding: 10px 22px 22px 22px;
+  border-radius: 10px;
+}
+.person-tital {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: start;
+  padding: 0px 22px 3px 22px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d3d3d3;
+
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0); /* Start from small size */
+        opacity: 0; /* Start with transparency */
+    }
+    to {
+        transform: scale(1); /* End with original size */
+        opacity: 1; /* End with full visibility */
+    }
+}
+.person-inner {
+  border: 1px solid #d3d3d3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 22px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  animation: zoomIn 0.5s ease forwards;
+}
+.container-persondetail{
+    animation: zoomIn 0.5s ease forwards;
+}
+.person-inner > div{
+    text-transform: capitalize;
+}
+.person-inner:hover{
+    border:1px solid #e43707;
+}
+.person-main > div > div {
+  width: 20%;
+  text-align: start;
+}
+.person-button{
+    border:  #00b8f5;
+    background-color: #00b8f5;
+    padding: 5px 10px;
     border-radius: 5px;
-    
+    color: #fff;
 }
-.passangerdetails{
-    width: 75%;
-    margin: auto;
-    margin-top: 20px;
+.person-button:hover{
+    background-color: #e43707;
+    border: #e43707;
+    padding: 5px 10px;
+}
+.passanger-message{
+    padding: 5px 18px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.add-button{
+    border: #e43707;
+    background-color: #e43707;
+    color: #d3d3d3;
+}
+.add-button:hover{
+    background-color: #00b8f5;
+}
+
+.address-form{
+  width: 75%;
+  margin: auto;
+  border: 1px solid #d3d3d3;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  padding: 12px 12px 0px 12px;
+  border-radius: 10px;
+  animation: zoomIn 0.5s ease forwards;
+}
+.address-form > div{
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+ 
+}
+.address-form > div > label{
+  width: 15%;
+}
+.address-button{
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid #00b8f5;
+  background-color: #00b8f5;
+  color: #fff;
+  text-transform: uppercase;
+}
+.address-button:hover{
+  border: 1px solid #e43707;
+  background-color: #e43707;
+
+}
+.address-form > div:last-child{
+  /* background-color: #e43707; */
+  border: none;
+  justify-content: end;
 }

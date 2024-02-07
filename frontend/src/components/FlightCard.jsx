@@ -68,7 +68,7 @@ const FlightCard = ({ data, date,person }) => {
         <time className="flight-card__day">{cangeDateFormate(date)}</time>
       </div>
       <div className="flight-card__action">
-        <p className="flight-card__price styled-price">{data.economyFare}</p>
+        <p className="flight-card__price styled-price">{data.economyFare}<label>{`*${person} INR`}</label></p>
         <button onClick={handelBooking} className="flight-card__cta button button--orange">{isAuthenticated ? "Select" : "LogIn"}</button>
       </div>
     </div>

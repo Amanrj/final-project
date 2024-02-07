@@ -173,3 +173,6 @@
   .flight-card__cta {
     min-width: 16rem;
   }
+.flight-card__price > label{
+  font-size: 18px;
+}

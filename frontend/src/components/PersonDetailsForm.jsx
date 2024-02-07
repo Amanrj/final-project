@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './PersonDetails.css'
 
-const PersonDetailsForm = ({setPerson}) => {
+const PersonDetailsForm = ({setPerson,messaage}) => {
 
-
+    const nameInputRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         gender: 'male',
@@ -47,12 +47,16 @@ const PersonDetailsForm = ({setPerson}) => {
                 age: '',
             })
             // console.log('Form data submitted:', formData);
+            nameInputRef.current.focus();
         }
+        
+
     };
 
     return (
 
         <div className="container-persondetail">
+            <p className='passanger-message'>{messaage}</p>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
@@ -61,6 +65,7 @@ const PersonDetailsForm = ({setPerson}) => {
                         type="text"
                         value={formData.name}
                         onChange={handleChange}
+                        ref={nameInputRef}
                     />
                 </div>
                 <div>
@@ -81,7 +86,7 @@ const PersonDetailsForm = ({setPerson}) => {
                     />
                 </div>
                 <div>
-                    <button type="submit">Add</button>
+                    <button  className='add-button' type="submit">Add Person</button>
                 </div>
             </form>
         </div>

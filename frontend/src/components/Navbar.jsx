@@ -27,6 +27,9 @@ const Navbar = () => {
   // const [logincheck,logincheckSet]=useState(false);
   const [isTourOpen, setIsTourOpen] = useState(false);
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  if(isAuthenticated){
+    console.log(user)
+  }
   // console.log(user, isAuthenticated);
   const setColaps = () => {
     setCola((pre) => !pre);
