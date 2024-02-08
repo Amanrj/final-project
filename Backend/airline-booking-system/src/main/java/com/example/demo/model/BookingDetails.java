@@ -3,6 +3,8 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.razorpay.Order;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,9 +12,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import lombok.Data;
 
 
 @Entity
+@Data
 public class BookingDetails {
 	
 	@Id
@@ -38,6 +42,10 @@ public class BookingDetails {
     private String flightNo;
     private String origin;
     private int person;
+    
+    private String orderId;
+    private String recipt;
+    private String orderStatus;
     
     @OneToMany(cascade = CascadeType.ALL)
     private List<PersonDetails> personDetails;
@@ -200,6 +208,31 @@ public class BookingDetails {
 		this.bookingDetailsId = bookingDetailsId;
 	}
 
+
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getRecipt() {
+		return recipt;
+	}
+
+	public void setRecipt(String recipt) {
+		this.recipt = recipt;
+	}
+
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "BookingDetails [bookingDetailsId=" + bookingDetailsId + ", address=" + address + ", airline=" + airline
@@ -207,13 +240,15 @@ public class BookingDetails {
 				+ ", businessFare=" + businessFare + ", date=" + date + ", departTime=" + departTime
 				+ ", departWeekday=" + departWeekday + ", destination=" + destination + ", duration=" + duration
 				+ ", economyFare=" + economyFare + ", firstFare=" + firstFare + ", flightId=" + flightId + ", flightNo="
-				+ flightNo + ", origin=" + origin + ", person=" + person + ", personDetails=" + personDetails + "]";
+				+ flightNo + ", origin=" + origin + ", person=" + person + ", orderId=" + orderId + ", recipt=" + recipt
+				+ ", orderStatus=" + orderStatus + ", personDetails=" + personDetails + "]";
 	}
 
 	public BookingDetails(Integer bookingDetailsId, CustomerAddress address, String airline, String airlineCode,
 			String arrivalTime, String arrivalWeekday, String businessFare, String date, String departTime,
 			String departWeekday, String destination, String duration, String economyFare, String firstFare,
-			int flightId, String flightNo, String origin, int person, List<PersonDetails> personDetails) {
+			int flightId, String flightNo, String origin, int person, String orderId, String recipt, String orderStatus,
+			List<PersonDetails> personDetails) {
 		super();
 		this.bookingDetailsId = bookingDetailsId;
 		this.address = address;
@@ -233,7 +268,13 @@ public class BookingDetails {
 		this.flightNo = flightNo;
 		this.origin = origin;
 		this.person = person;
+		this.orderId = orderId;
+		this.recipt = recipt;
+		this.orderStatus = orderStatus;
 		this.personDetails = personDetails;
 	}
+	
+	
+	
     
 }

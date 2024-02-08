@@ -3,13 +3,17 @@ import { myContext } from "../context/FlightPerson";
 import { useAuth0 } from '@auth0/auth0-react';
 import API from "./Axios";
 import ToastMessage from './ToastMessage';
-
+import Razorpay from 'razorpay';
 
 
 const FinalBookingPageFlight = () => {
     const { bookingDetails, setBookingDetails } = useContext(myContext);
     const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
     const [isBooking, setIsBooking] = useState(false);
+
+    const handelRozerPayPayment=(amount,orderid)=>{
+        // initiateRazorpayPayment(amount,orderid)
+    }
 
     // if(isAuthenticated && !isLoading){
     //   console.log(user)
@@ -20,7 +24,7 @@ const FinalBookingPageFlight = () => {
     //   })
     // }
 
-    console.log(bookingDetails);
+    // console.log(bookingDetails);
     const cangeDateFormate = (date) => {
         const inputDate = new Date(date);
         const options = { weekday: 'short', day: 'numeric', month: 'short' };
@@ -43,8 +47,11 @@ const FinalBookingPageFlight = () => {
         if(isAuthenticated && !isBooking){
             API.post(`/booking/${user.email}`,bookingDetails).then((res)=>{
                 console.log(res.data,"Booking Done");
+
             }).catch((err)=>{
                 console.log(err.message);
+                alert(err.message)
+                setIsBooking(false);
             })
 
         }else{

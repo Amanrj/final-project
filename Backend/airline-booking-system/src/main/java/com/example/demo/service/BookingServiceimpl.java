@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import com.example.demo.repositery.BookingDetailsDao;
 import com.example.demo.repositery.CustomerAddressDao;
 import com.example.demo.repositery.PersonDetailsDao;
 import com.example.demo.repositery.UserDetailsDao;
+import com.razorpay.Order;
+import com.razorpay.RazorpayException;
 
 @Service
 public class BookingServiceimpl implements BookingService {
@@ -29,48 +33,75 @@ public class BookingServiceimpl implements BookingService {
 	@Autowired
 	private UserDetailsDao userDao;
 
+	@Autowired
+	private RozerPay rozerPay;
+
 	@Override
 	public BookingDetails saveBooking(BookingDetails bookingdetails, String user) throws Exception {
-	    UserDetails findedUser = userDao.findByemail(user);
+		UserDetails findedUser = userDao.findByemail(user);
 
-	    if (findedUser != null) {
-	        // Add booking to user's bookings
+		if (findedUser != null) {
+			// Add booking to user's bookings
 
-	        // Save customer address
-	        CustomerAddress address = bookingdetails.getAddress();
-	        if (address != null) {
-	            customerAddressDao.save(address);
-	        }
+			// Save customer address
+			CustomerAddress address = bookingdetails.getAddress();
+			if (address != null) {
+				customerAddressDao.save(address);
+			}
 
-	        // Save person details
-	        List<PersonDetails> persondetails = bookingdetails.getPersonDetails();
-	        if (persondetails != null && !persondetails.isEmpty()) {
-	            personDetailsDao.saveAll(persondetails);
-	        }
+			// Save person details
+			List<PersonDetails> persondetails = bookingdetails.getPersonDetails();
+			if (persondetails != null && !persondetails.isEmpty()) {
+				personDetailsDao.saveAll(persondetails);
+			}
 
-	        BookingDetails bookingDetail= bookingDetails.save(bookingdetails);
-	       
-	        findedUser.getAllBookigs().add(bookingDetail);
-	        userDao.save(findedUser);
-	        
-	        return bookingDetail;
-	    } else {
-	        throw new Exception("User not found with email: " + user);
-	    }
+			try {
+				Integer amount = Integer.parseInt(bookingdetails.getEconomyFare()) * bookingdetails.getPerson();
+
+				Order createdOrder = rozerPay.createOrder(amount * 100);
+				String orderJson = createdOrder.toString();
+				JSONObject orderJsonObject = new JSONObject(orderJson);
+				String id = orderJsonObject.getString("id");
+				String receipt = orderJsonObject.getString("receipt");
+				String bookindStatus = orderJsonObject.getString("status");
+//				System.out.println("ID: " + id);
+//				System.out.println("Receipt: " + receipt);
+//				System.out.println(createdOrder.toString());
+				bookingdetails.setOrderId(id);
+				bookingdetails.setRecipt(receipt);
+				bookingdetails.setOrderStatus(bookindStatus);
+			} catch (RazorpayException | JSONException e) {
+//				System.err.println("Error creating order: " + e.getMessage());
+				throw new Exception(e.getMessage());
+			}
+
+			try {
+
+				BookingDetails bookingDetail = bookingDetails.save(bookingdetails);
+
+				findedUser.getAllBookigs().add(bookingDetail);
+				userDao.save(findedUser);
+
+				return bookingDetail;
+			} catch (Exception e) {
+				throw new Exception(e.getMessage());
+			}
+
+		} else {
+			throw new Exception("User not found with email: " + user);
+		}
 	}
-	
 
 	@Override
 	public List<BookingDetails> getAllBooking(String user) throws Exception {
 
 		UserDetails findedUser = userDao.findByemail(user);
-		if(findedUser!=null) {
+		if (findedUser != null) {
 			return findedUser.getAllBookigs();
-		}else {
+		} else {
 			throw new Exception("User Not Found");
 		}
 
-		
 	}
 
 	@Override
