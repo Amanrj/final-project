@@ -93,4 +93,15 @@ public class MainController {
 	public ResponseEntity<List<BookingDetails>> deleteBooking() throws Exception{
 		return new ResponseEntity<List<BookingDetails>>(bookingservice.deletAllBooking(),HttpStatus.OK);
 	}
+	@PostMapping("/booking/done/{id}")
+	public ResponseEntity<String> saveBookigConform(@PathVariable("id")String id) throws Exception{
+		
+		
+		return new ResponseEntity<String> (bookingservice.saveBookigConform(id),HttpStatus.ACCEPTED);
+	}
 }
+
+
+
+
+

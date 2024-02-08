@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -109,6 +110,22 @@ public class BookingServiceimpl implements BookingService {
 		List<BookingDetails> allBooking = bookingDetails.findAll();
 		bookingDetails.deleteAll();
 		return allBooking;
+	}
+
+	@Override
+	public String saveBookigConform(String id) throws Exception {
+
+		Optional<BookingDetails> findedBooking = bookingDetails.findById(Integer.parseInt(id));
+
+		if (findedBooking.isPresent()) {
+			BookingDetails booking = findedBooking.get();
+			booking.setOrderStatus("paid");
+			bookingDetails.save(booking);
+
+		} else {
+			throw new Exception("Booking Details Not Found");
+		}
+		return "Paid";
 	}
 
 }
