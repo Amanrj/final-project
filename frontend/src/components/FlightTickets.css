@@ -1,0 +1,205 @@
+@keyframes zoomIn {
+  from {
+      transform: scale(0); /* Start from small size */
+      opacity: 0; /* Start with transparency */
+  }
+  to {
+      transform: scale(1); /* End with original size */
+      opacity: 1; /* End with full visibility */
+  }
+}
+.ticket-container2{
+  animation:  zoomIn 0.5s;
+}
+.width30{
+  width: 25% !important;
+  /* marg */
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.flightticket {
+    margin: 5px;
+    border-radius: 5px;
+    font-family: "Lato";
+    transition: all 200ms ease-in;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.1);
+    -webkit-font-smoothing: antialiased;
+    margin-top: -15px;
+    background: #fff;
+    transition: margin 200ms linear;
+    transition-delay: 500ms;
+    padding-bottom: 10px;
+  }
+  .flightticket:first-of-type {
+    margin-top: 5px;
+  }
+  .flightticket .flightticket-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms ease-in;
+  }
+  .flightticket.open {
+    margin: 10px 5px 25px 5px;
+    padding-bottom: 0;
+    transition-delay: 0ms;
+  }
+  .flightticket.open .flightticket-details {
+    max-height: 500px;
+    transition: max-height 500ms ease-in;
+    transition-delay: 200ms;
+  }
+  .flightticket.color-1 {
+    background: #f5f7fa;
+    background: -webkit-linear-gradient(left, #f5f7fa, #c3cfe2);
+    background: -moz-linear-gradient(left, #f5f7fa, #c3cfe2);
+    background: linear-gradient(left, #f5f7fa, #c3cfe2);
+  }
+  .flightticket.color-2 {
+    background: #7db6ce;
+    background: -webkit-linear-gradient(left, #7db6ce, #6391bf);
+    background: -moz-linear-gradient(left, #7db6ce, #6391bf);
+    background: linear-gradient(left, #7db6ce, #6391bf);
+  }
+  .flightticket.color-3 {
+    background: #dd8d8d;
+    background: -webkit-linear-gradient(top left, #dd8d8d, #4a6c87);
+    background: -moz-linear-gradient(top left, #dd8d8d, #4a6c87);
+    background: linear-gradient(top left, #dd8d8d, #4a6c87);
+  }
+  .flightticket.color-3 .flightticket-label {
+    color: #fff;
+  }
+  .flightticket.color-3 .flightticket-airportcode {
+    color: #fff;
+  }
+  .flightticket.color-3 .flightticket-icon .material-icons {
+    color: #fff;
+  }
+  .flightticket.color-3 .flightticket-value {
+    color: #fff;
+  }
+  .flightticket.color-4 {
+    background: #e6e9f0;
+    background: -webkit-linear-gradient(top left, #e6e9f0, #eef1f5);
+    background: -moz-linear-gradient(top left, #e6e9f0, #eef1f5);
+    background: linear-gradient(top left, #e6e9f0, #eef1f5);
+  }
+  .flightticket.color-5 {
+    background: #f2994a;
+    background: -webkit-linear-gradient(top left, #f2994a, #f2c94c);
+    background: -moz-linear-gradient(top left, #f2994a, #f2c94c);
+    background: linear-gradient(top left, #f2994a, #f2c94c);
+  }
+  .flightticket.color-6 {
+    background: #e0eafc;
+    background: -webkit-linear-gradient(top, #e0eafc, #bad1fc);
+    background: -moz-linear-gradient(top, #e0eafc, #bad1fc);
+    background: linear-gradient(top, #e0eafc, #bad1fc);
+  }
+  .flightticket.color-7 {
+    background: #fca5f1;
+    background: -webkit-linear-gradient(left, #fca5f1, #b5ffff);
+    background: -moz-linear-gradient(left, #fca5f1, #b5ffff);
+    background: linear-gradient(left, #fca5f1, #b5ffff);
+  }
+  .flightticket.color-8 {
+    background: #5399db;
+    background: -webkit-linear-gradient(top right, #5399db, #5153d6);
+    background: -moz-linear-gradient(top right, #5399db, #5153d6);
+    background: linear-gradient(top right, #5399db, #5153d6);
+  }
+  .flightticket.color-9 {
+    background: #304352;
+    background: -webkit-linear-gradient(bottom right, #304352, #162851);
+    background: -moz-linear-gradient(bottom right, #304352, #162851);
+    background: linear-gradient(bottom right, #304352, #162851);
+  }
+  .flightticket.color-9 .flightticket-label {
+    color: #fff;
+  }
+  .flightticket.color-9 .flightticket-airportcode {
+    color: #fff;
+  }
+  .flightticket.color-9 .flightticket-icon .material-icons {
+    color: #fff;
+  }
+  .flightticket.color-9 .flightticket-value {
+    color: #fff;
+  }
+  .flightticket.color-10 {
+    background: #ff9a9e;
+    background: -webkit-linear-gradient(right, #ff9a9e, #fad0c4);
+    background: -moz-linear-gradient(right, #ff9a9e, #fad0c4);
+    background: linear-gradient(right, #ff9a9e, #fad0c4);
+  }
+  .flightticket .flightticket-header {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .flightticket .flightticket-header .flightticket-logo {
+    min-width: 25%;
+    text-align: center;
+  }
+  .flightticket .flightticket-header .flightticket-logo img {
+    height: 50px;
+  }
+  .flightticket .flightticket-header .flightticket-icon {
+    padding: 0 10px;
+    color: #5d6474;
+  }
+  .flightticket .flightticket-header .flightticket-icon .material-icons {
+    font-size: 30px;
+  }
+  .flightticket .flightticket-label {
+    display: block;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 400;
+    color: #5d6474;
+  }
+  .flightticket .flightticket-airport {
+    padding: 5px 10px;
+    width: 15% ;
+    text-align: center;
+  }
+  .flightticket .flightticket-airportcode {
+    font-size: 34px;
+    margin: 0;
+    line-height: 34px;
+    font-weight: 600;
+    color: #5d6474;
+  }
+  .flightticket .flightticket-content {
+    padding: 20px 10px;
+    min-height: 200px;
+    border-top: 2px dashed #5d6474;
+    margin-top: 10px;
+  }
+  .flightticket .flightticket-value {
+    color: #2C3E50;
+    font-weight: 700;
+    margin-top: 3px;
+    display: block;
+  }
+  .flightticket .flightticket-block {
+    margin: 7px 10px;
+    display: inline-block;
+  }
+  .flightticket .barcode {
+    margin: 0 auto;
+    display: block;
+    width: 288px;
+    height: 142px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg class='barcode' width='288px' height='142px' x='0px' y='0px' viewBox='0 0 288 142' xmlns='http://www.w3.org/2000/svg' version='1.1' style=''><g transform='translate(10, 10)' style='fill:#2C3E50;'><rect x='0' y='0' width='4' height='100'></rect><rect x='6' y='0' width='2' height='100'></rect><rect x='12' y='0' width='2' height='100'></rect><rect x='22' y='0' width='4' height='100'></rect><rect x='32' y='0' width='2' height='100'></rect><rect x='36' y='0' width='2' height='100'></rect><rect x='44' y='0' width='2' height='100'></rect><rect x='54' y='0' width='4' height='100'></rect><rect x='60' y='0' width='2' height='100'></rect><rect x='66' y='0' width='4' height='100'></rect><rect x='72' y='0' width='4' height='100'></rect><rect x='80' y='0' width='4' height='100'></rect><rect x='88' y='0' width='8' height='100'></rect><rect x='100' y='0' width='2' height='100'></rect><rect x='104' y='0' width='2' height='100'></rect><rect x='110' y='0' width='2' height='100'></rect><rect x='118' y='0' width='8' height='100'></rect><rect x='128' y='0' width='2' height='100'></rect><rect x='132' y='0' width='2' height='100'></rect><rect x='138' y='0' width='2' height='100'></rect><rect x='144' y='0' width='8' height='100'></rect><rect x='154' y='0' width='4' height='100'></rect><rect x='162' y='0' width='2' height='100'></rect><rect x='166' y='0' width='2' height='100'></rect><rect x='176' y='0' width='2' height='100'></rect><rect x='186' y='0' width='2' height='100'></rect><rect x='192' y='0' width='4' height='100'></rect><rect x='198' y='0' width='4' height='100'></rect><rect x='206' y='0' width='4' height='100'></rect><rect x='212' y='0' width='4' height='100'></rect><rect x='220' y='0' width='2' height='100'></rect><rect x='228' y='0' width='2' height='100'></rect><rect x='236' y='0' width='4' height='100'></rect><rect x='242' y='0' width='4' height='100'></rect><rect x='252' y='0' width='6' height='100'></rect><rect x='260' y='0' width='2' height='100'></rect><rect x='264' y='0' width='4' height='100'></rect></g></svg>");
+  }
+  .ticket-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .ticket-container2:hover{
+    cursor: pointer;
+  }

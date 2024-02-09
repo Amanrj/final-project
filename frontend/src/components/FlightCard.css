@@ -16,6 +16,7 @@
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #d3d3d3;
+    background-color: rgba(255, 255, 255, 0.5);
     max-height: 1000px;
     overflow: scroll;
     overflow-x: hidden;
@@ -24,12 +25,15 @@
   .stickyParagraph {
     position: sticky;
     top: -20px;
-    background-color: #fefcfc; 
+    /* background-color: rgba(255, 255, 255, 0.5);  */
     padding-bottom: 5px;
     font-weight: bold;
-   width: 100%;
+    width: 100%;
     z-index: 4;
     border-bottom: 1px solid #d3d3d3;
+    background-color: rgba(255, 255, 255);
+    padding: 2px 10px;
+    border-radius: 5px;
   }
 
   /* Scroll Bar  */
@@ -55,6 +59,7 @@
     width: 100%;
     padding: 20px;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #d3d3d3;
     margin-top: 10px;
   }

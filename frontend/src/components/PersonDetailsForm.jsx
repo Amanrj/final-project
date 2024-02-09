@@ -73,6 +73,7 @@ const PersonDetailsForm = ({ setPerson, messaage, person }) => {
                             <input
                                 id="name"
                                 type="text"
+                                className='persondetails-input'
                                 value={formData.name}
                                 onChange={handleChange}
                                 ref={nameInputRef}
@@ -80,7 +81,7 @@ const PersonDetailsForm = ({ setPerson, messaage, person }) => {
                         </div>
                         <div>
                             <label htmlFor="gender">Gender</label>
-                            <select id="gender" value={formData.gender} onChange={handleChange}>
+                            <select className='persondetails-input' id="gender" value={formData.gender} onChange={handleChange}>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="transgender">Transgender</option>
@@ -88,7 +89,7 @@ const PersonDetailsForm = ({ setPerson, messaage, person }) => {
                         </div>
                         <div>
                             <label htmlFor="age">Age</label>
-                            <input
+                            <input className='persondetails-input'
                                 id="age"
                                 type="text"
                                 value={formData.age}

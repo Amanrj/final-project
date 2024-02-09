@@ -12,17 +12,18 @@ const Navbar = () => {
       link: "/"
     },
     {
-      name: "About",
-      link: "/about"
-    },
-    {
       name: "Tickets",
       link: "/tickets"
     },
     {
-      name: "Favorites",
-      link: "/favorites"
-    }
+      name: "About",
+      link: "/about"
+    },
+   
+    // {
+    //   name: "Favorites",
+    //   link: "/favorites"
+    // }
   ];
   const [cola, setCola] = useState(true);
   // const [logincheck,logincheckSet]=useState(false);

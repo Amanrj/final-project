@@ -6,6 +6,14 @@
   /* margin-top: 20px; */
   border: 1px solid #d3d3d3;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.persondetails-input{
+  background-color: transparent;
+  border: 1px solid #4e4545;
+  border-radius: 5px;
+  padding: 0px 2px;
+  text-transform: capitalize;
 }
 .container-persondetail > form {
   display: flex;
@@ -36,6 +44,7 @@
   border: 1px solid #d3d3d3;
   padding: 10px 22px 22px 22px;
   border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .person-tital {
   display: flex;
@@ -58,6 +67,12 @@
         opacity: 1; /* End with full visibility */
     }
 }
+.address-form-desigine {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.flights-list-final-detsils-address{
+  background-color: rgba(255, 255, 255, 0.5);
+}
 .person-inner {
   border: 1px solid #d3d3d3;
   display: flex;
@@ -68,6 +83,7 @@
   border-radius: 10px;
   margin-bottom: 12px;
   animation: zoomIn 0.5s ease forwards;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .flights-list{
   animation: zoomIn 0.5s ease forwards;
@@ -119,6 +135,7 @@
   padding: 12px 12px 0px 12px;
   border-radius: 10px;
   animation: zoomIn 0.5s ease forwards;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .address-form > div{
   padding: 20px;

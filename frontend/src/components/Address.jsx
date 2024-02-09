@@ -42,11 +42,11 @@ const Address = ({setFinalAddress,person}) => {
         <>
             <form className='address-form' onSubmit={handleSubmit}>
                 <p>Fill Your Address:</p>
-                <div>
+                <div className='address-form-desigine'>
 
 
                     <label htmlFor="street">Street:</label>
-                    <input
+                    <input className='persondetails-input'
                         type="text"
                         id="street"
                         name="street"
@@ -55,7 +55,7 @@ const Address = ({setFinalAddress,person}) => {
                         required
                     />
                     <label htmlFor="city">City:</label>
-                    <input
+                    <input className='persondetails-input'
                         type="text"
                         id="city"
                         name="city"
@@ -64,9 +64,9 @@ const Address = ({setFinalAddress,person}) => {
                         required
                     />
                 </div>
-                <div>
+                <div className='address-form-desigine'>
                     <label htmlFor="state">State:</label>
-                    <input
+                    <input className='persondetails-input'
                         type="text"
                         id="state"
                         name="state"
@@ -76,7 +76,7 @@ const Address = ({setFinalAddress,person}) => {
                     />
 
                     <label htmlFor="zipcode">Zipcode:</label>
-                    <input
+                    <input className='persondetails-input'
                         type="text"
                         id="zipcode"
                         name="zipcode"

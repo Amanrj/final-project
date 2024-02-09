@@ -13,9 +13,10 @@
   display: block;
   margin-top: 1vh;
   padding: 2vh 3vh;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border: 1px solid #d3d3d3;
-  background: #fff;
+  /* background: #ffffff46; */
+  backdrop-filter: blur(10px);
   border-radius: 1vh;
   margin: auto;
   width: 85%;
@@ -144,13 +145,17 @@ input[type="date"] {
   color: black;
   outline: none;
   text-transform: uppercase;
+  background: transparent;
   
-  background-color: #fff; /* Specify your desired background color */
+ /* Specify your desired background color */
 }
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
   font-size: 18px;
+  background-color: transparent;
 }
+
+
 
 /* Remove the increment and decrement buttons in Chrome and Safari */
 input[type="number"]::-webkit-inner-spin-button,
