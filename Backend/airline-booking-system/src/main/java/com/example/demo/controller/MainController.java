@@ -36,6 +36,11 @@ public class MainController {
 	
 	@Autowired
 	private BookingService bookingservice;
+	
+	@GetMapping("/hello")
+	public ResponseEntity<String> getHello() throws Exception{
+		return new ResponseEntity<String>("Hello From Server",HttpStatus.OK);
+	}
 
 	@GetMapping("/flight")
 	public ResponseEntity<List<FlightData>> allFlight() throws Exception {
@@ -45,7 +50,7 @@ public class MainController {
 
 	@GetMapping("/airports/{name}")
 	public ResponseEntity<List<com.example.demo.model.Airports>> getAllAirporat(
-			@PathVariable("name") String airportName) {
+			@PathVariable("name") String airportName) throws Exception {
 		return new ResponseEntity<>(airports.findAllAirports(airportName), HttpStatus.OK);
 	}
 
