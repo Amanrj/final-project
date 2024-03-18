@@ -25,7 +25,7 @@ const RazorpayComponent = ({ amount, orderid,setonPaymentFail,setonPaymentSucess
     if (!amount) return;
 
     const options = {
-      key: 'rzp_test_A4auelGKapiY1w', // Replace with your actual Razorpay Key ID
+      key: 'rzp_test_bixwf8Ucq0MuaD', // Replace with your actual Razorpay Key ID
       amount: amount,
       currency: "INR",
       name: "Acme Corp",
