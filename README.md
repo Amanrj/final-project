@@ -1,6 +1,6 @@
 # Flight Booking System
 
-Author: - [Aman](https://github.com/Amanrj)
+Author: - [Ranjeet](https://github.com/ranjeetmasaischool)
 
 The Flight Booking System is a web application designed to simplify the process of booking flights for users. It provides a user-friendly interface for searching and booking flights, managing bookings, and completing payments securely. The system is built using React for the frontend, Spring Boot for the backend, and MySQL for the database.
 
